@@ -127,6 +127,7 @@ void setup() {
   sine6.frequency(100);
   sine8.frequency(100);
 
+  //Sets up the mixers 
   mixer1.gain(0, 0.5);
   mixer1.gain(1, 0.5);
   mixer1.gain(2, 0.5);
@@ -154,12 +155,12 @@ void setup() {
     }
   }
 
-  applyPreset(1);
+  applyPreset(1); //Applies the first preset, by default
 
 }
 
 void loop() {
-  buttonValue = analogRead(A2);
+  buttonValue = analogRead(A2); //Reads analogValue for the push buttons
   buttonUpdate(buttonValue);
 
   //Controls the volume for the device
@@ -190,6 +191,7 @@ void loop() {
 
   }
 
+  //Controls the currently activated filter, depending on which variable has been activated
   if (currentFilter == 0) {
     filterMixer.gain(1, 0);
     filterMixer.gain(2, 0);
